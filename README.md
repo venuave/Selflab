@@ -11,14 +11,12 @@ portfolio website hi-tina.com
 # About project
 
 ## Project name
-Yummy – Pre-cooked meal delivery subscription
+Selflab – Personal Blog Platform
 
 ## Project description
-It is a service that offers subscription for
-3-meal pre-cooked food delivery. The users can
-select the pre-cooked meals from available in
-the webapp and get it delivered to their homes.
-The first meal package delivery is for free.
+It is a service that offers platform for
+creator blogging. The users can
+create articles, edit them, and remove.
 
 ## Project purpose
 This project was initiated for learning
@@ -29,10 +27,10 @@ The project development is currently in progress.
 ## MVP overview:
 – one page website
 – create account and login to access personal space
-– filter meals through categories (vegan, protein, etc.)
-– add selected meals to the order
-– remove selected meals from the order
-– add delivery address
+– create a new article
+– add data to articles
+– edit existing articles
+– delete articles
 
 
 
