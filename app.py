@@ -1,6 +1,15 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 app = Flask(__name__)
 app.config.from_object('config')
+
+cookies_data = {
+  'chocolate-chip' : {'name': 'Chocolate Chip', 'price': '$1.50'},
+  'oatmeal-raisin' : {'name': 'Oatmeal Raisin', 'price': '$1.00'},
+  'sugar' : {'name': 'Sugar', 'price': '$0.75'},
+  'peanut-butter' : {'name': 'Peanut Butter', 'price': '$0.50'},
+  'oatmeal' : {'name': 'Oatmeal', 'price': '$0.25'},
+  'salted-caramel' : {'name': 'Salted Caramel', 'price': '$1.00'},
+}
 
 articles_data = {
   'article-one' : {'name': 'How to be happy', 'read time': '7min'},
@@ -8,13 +17,28 @@ articles_data = {
   'article-three' : {'name': 'How to be independent', 'read time': '4min'},
 }
 
-@app.route('/')
-def index():
-  return '''<h1>This is Selflab blog!</h1> <a href="/about">About Blog</a> <br> <br> <a href="/articles">Articles</a>'''
+#@app.route('/')
+# def index():
+#return render_template('index.html')
+
 
 @app.route('/about')
 def about():
-  return 'We like articles'
+  return render_template('about.html')
+
+@app.route('/cookies')
+def cookies():
+  return render_template('cookies.html')
+
+@app.route('/')
+def index():
+  name = 'Sam'
+  fake_number = 342
+  return render_template('index.html', name=name, visitor_number=fake_number)
+
+# @app.route('/about')
+# def about():
+  #return 'We like articles'
 
 @app.route('/about-me')
 def about_me():
