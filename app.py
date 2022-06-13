@@ -26,6 +26,10 @@ articles_data = {
 def about():
   return render_template('about.html')
 
+@app.route('/registration')
+def registration():
+  return render_template('registration.html')
+
 @app.route('/cookies')
 def cookies():
   return render_template('cookies.html')
@@ -42,7 +46,11 @@ def index():
 
 @app.route('/about-me')
 def about_me():
-  return redirect(url_for('about'))
+  return render_template ('about.html')
+
+@app.route('/blog')
+def blog():
+  return render_template ('blog.html')
 
 @app.route('/articles')
 def articles():

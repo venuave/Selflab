@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <nav class="nav">
+      <div class="logo">
+        <a href="{{ url_for('index') }}"
+          ><img src="static/img/logo.svg" alt="Selflab logo" height="20px;"
+        /></a>
+      </div>
+      <div class="nav-links">
+        <a href="{{ url_for('about_me') }}">About me</a>
+        <a href="#">Login</a>
+        <a href="{{ url_for('registration') }}">Sign up</a>
+        <a href="{{ url_for('blog') }}">Blog</a>
+      </div>
+    </nav>
     {% block head %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,4 +28,7 @@
   <body>
     {% block body %}{% endblock %}
   </body>
+  <footer class="footer">
+    Copyright &copy; 2022 by Selflab. All rights reserved.
+  </footer>
 </html>
