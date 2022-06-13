@@ -55,6 +55,9 @@ def article(slug):
   else:
     return 'Sorry we could not find that article.' 
 
+@app.route('/legal')
+def legal():
+  return send_file('static/downloads/legal.txt', as_attachment=True)
 
 if __name__ == '__main__':
   app.run()
