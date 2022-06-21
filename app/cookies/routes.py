@@ -1,5 +1,8 @@
+from .models import Cookie, Article
 from flask import Blueprint, render_template
 
+
+#remove
 cookies_data = {
   'chocolate-chip' : {'name': 'Chocolate Chip', 'price': '$1.50'},
   'oatmeal-raisin' : {'name': 'Oatmeal Raisin', 'price': '$1.00'},
@@ -20,7 +23,7 @@ blueprint = Blueprint('cookies', __name__)
 
 @blueprint.route('/cookies')
 def cookies():
-  return render_template('cookies.html')
+  return render_template('cookies/cookies.html')
 
 @blueprint.route('/articles')
 def articles():

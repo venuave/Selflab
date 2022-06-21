@@ -3,15 +3,16 @@
   <head>
     <nav class="nav">
       <div class="logo">
-        <a href="{{ url_for('index') }}"
+        <a href="{{ url_for('simple_pages.index') }}"
           ><img src="static/img/logo.svg" alt="Selflab logo" height="20px;"
         /></a>
       </div>
       <div class="nav-links">
-        <a href="{{ url_for('about_me') }}">About me</a>
+        <a href="{{ url_for('simple_pages.about') }}">About me</a>
+        <a href="{{ url_for('cookies.cookies') }}">Cookies</a>
         <a href="#">Login</a>
-        <a href="{{ url_for('registration') }}">Sign up</a>
-        <a href="{{ url_for('blog') }}">Blog</a>
+        <a href="{{ url_for('simple_pages.registration') }}">Sign up</a>
+        <a href="{{ url_for('simple_pages.blog') }}">Blog</a>
       </div>
     </nav>
     {% block head %}

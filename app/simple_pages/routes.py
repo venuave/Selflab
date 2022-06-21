@@ -2,24 +2,26 @@ from flask import Blueprint, render_template, redirect, url_for, send_file
 
 blueprint = Blueprint('simple_pages', __name__)
 
-@blueprint.route('/about')
+@blueprint.route('/')
+def index():
+  return render_template('simple_pages/index.html')
+
+@blueprint.route('/about') 
 def about():
-  return render_template('about.html')
+  return render_template('simple_pages/about_me.html')
 
 @blueprint.route('/registration')
 def registration():
-  return render_template('registration.html')
+  return render_template('simple_pages/registration.html')
 
-@blueprint.route('/')
-def index():
-  name = 'Sam'
-  fake_number = 342
-  return render_template('simple_pages/index.html', name=name, visitor_number=fake_number)
 
 @blueprint.route('/blog')
 def blog():
-  return render_template ('blog.html')
+  return render_template ('simple_pages/blog.html')
 
-@blueprint.route('/legal')
-def legal():
-  return send_file('static/downloads/legal.txt', as_attachment=True)
+@blueprint.route('/base')
+def base():
+  return render_template ('simple_pages/base.html')
+
+
+
