@@ -6,6 +6,7 @@ class Cookie(db.Model):
   name = db.Column(db.String(80))
   price = db.Column(db.Numeric(10, 2))
   picture_url = db.Column(db.String(260))
+  cookie_orders = db.relationship('CookieOrder', backref='cookie', lazy=True)
 
 class Article(db.Model):
   id = db.Column(db.Integer, primary_key=True)

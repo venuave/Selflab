@@ -1,7 +1,7 @@
 from flask import Flask
 
 from .simple_pages.__init__ import routes
-from . import cookies
+from . import cookies, simple_pages, orders
 from app.extensions.database import db, migrate
 
 def create_app():
