@@ -16,7 +16,8 @@ def create_app():
 # Blueprints
 def register_blueprints(app: Flask):
   app.register_blueprint(cookies.routes.blueprint)
-  app.register_blueprint(routes.blueprint)
+  app.register_blueprint(simple_pages.routes.blueprint)
+  app.register_blueprint(orders.routes.blueprint)
 
 
 def register_extensions(app: Flask):
