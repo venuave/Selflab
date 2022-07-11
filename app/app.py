@@ -20,6 +20,7 @@ def register_blueprints(app: Flask):
   app.register_blueprint(orders.routes.blueprint)
 
 
+
 def register_extensions(app: Flask):
   db.init_app(app)
   migrate.init_app(app, db)

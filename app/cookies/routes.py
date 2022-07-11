@@ -2,12 +2,6 @@ from .models import Cookie
 from flask import Blueprint, render_template, request, current_app
 
 
-#remove
-articles_data = {
-  'article-one' : {'name': 'How to be happy', 'read time': '7min'},
-  'article-two' : {'name': 'How to be balanced', 'read time': '6min'},
-  'article-three' : {'name': 'How to be independent', 'read time': '4min'},
-}
 
 blueprint = Blueprint('cookies', __name__)
 

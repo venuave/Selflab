@@ -13,9 +13,9 @@ cookies_data = {
   'oatmeal' : {'name': 'Oatmeal', 'price': 0.25},
   'salted-caramel' : {'name': 'Salted Caramel', 'price': 1.00},
 }
-
 for slug, cookie in cookies_data.items():
   new_cookie = Cookie(slug=slug, name=cookie['name'], price=cookie['price'])
   db.session.add(new_cookie)
+
 
 db.session.commit()
