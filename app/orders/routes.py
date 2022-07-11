@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
 from app.cookies.models import Cookie
+from app.orders.models import Order, Address
+from .services.create_order import create_order
 
 blueprint = Blueprint('orders', __name__)
   
@@ -11,4 +13,7 @@ def get_checkout():
 @blueprint.post('/checkout')
 def post_checkout():
   cookies = Cookie.query.all()
+
+  create_order(request.form, cookies)
+
   return render_template('orders/new.html', cookies=cookies)
