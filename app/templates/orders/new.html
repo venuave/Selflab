@@ -49,6 +49,11 @@ endblock %} {% block body %}
     <label for="country">Country:</label>
     <input type="text" name="country" id="country" placeholder="Cookieland" />
   </div>
+
+  {% if error %}
+  <p style="color: tomato">{{ error }}</p>
+  {% endif %}
+
   <input type="submit" value="Submit Order" />
 </form>
 
