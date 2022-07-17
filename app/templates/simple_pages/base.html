@@ -31,5 +31,12 @@
   </body>
   <footer class="footer">
     Copyright &copy; 2022 by Selflab. All rights reserved.
+    <hr />
+    {% if current_user.is_authenticated %}
+    <small>
+      Logged in as {{ current_user.email }}.
+      <a href="{{ url_for('users.logout') }}">Logout</a>
+    </small>
+    {% endif %}
   </footer>
 </html>

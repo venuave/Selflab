@@ -2,15 +2,18 @@ from flask import Blueprint, render_template, request, current_app
 from app.cookies.models import Cookie
 from app.orders.models import Order, Address
 from .services.create_order import create_order
+from flask_login import login_required
 
 blueprint = Blueprint('orders', __name__)
   
 @blueprint.get('/checkout')
+@login_required
 def get_checkout():
   cookies = Cookie.query.all()
   return render_template('orders/new.html', cookies=cookies)
 
 @blueprint.post('/checkout')
+@login_required
 def post_checkout():
   try:
     cookies = Cookie.query.all()
