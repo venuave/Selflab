@@ -1,6 +1,6 @@
 from . import routes, models
 
-from app.extensions.database import db, CRUDMixin
+from app.extensions.database import db, CRUDMixin, UserMixin 
 
 class User(db.Model, CRUDMixin, UserMixin):
   id = db.Column(db.Integer, primary_key = True)
