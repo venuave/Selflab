@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <nav class="nav">
+      <div class="logo">
+        <a href="{{ url_for('simple_pages.index') }}"
+          ><img src="static/img/logo.svg" alt="Selflab logo" height="20px;"
+        /></a>
+      </div>
+      <div class="nav-links">
+        <a href="{{ url_for('simple_pages.about') }}">About me</a>
+        <a href="{{ url_for('cookies.cookies') }}">Cookies</a>
+        <a href="#">Login</a>
+        <a href="{{ url_for('simple_pages.registration') }}">Sign up</a>
+        <a href="{{ url_for('simple_pages.blog') }}">Blog</a>
+      </div>
+    </nav>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+  <footer class="footer">
+    Copyright &copy; 2022 by Selflab. All rights reserved.
+    <hr />
+    {% if current_user.is_authenticated %}
+    <small>
+      Logged in as {{ current_user.email }}.
+      <a href="{{ url_for('users.logout') }}">Logout</a>
+    </small>
+    {% endif %}
+  </footer>
+</html>
