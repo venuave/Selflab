@@ -10,8 +10,8 @@
       <div class="nav-links">
         <a href="{{ url_for('simple_pages.about') }}">About me</a>
         <a href="{{ url_for('cookies.cookies') }}">Cookies</a>
-        <a href="#">Login</a>
-        <a href="{{ url_for('simple_pages.registration') }}">Sign up</a>
+        <a href="{{ url_for('users.get_login') }}">Login</a>
+        <a href="{{ url_for('users.get_registration') }}">Sign up</a>
         <a href="{{ url_for('simple_pages.blog') }}">Blog</a>
       </div>
     </nav>

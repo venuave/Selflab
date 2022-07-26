@@ -1,8 +1,33 @@
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, render_template, request, url_for, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
+from app.users.models import User
 from flask_login import login_user, logout_user
 
 blueprint = Blueprint('users', __name__)
+
+@blueprint.route('/registration')
+def get_registration():
+  return render_template('users/registration.html')
+
+@blueprint.post('/registration')
+def post_registration():
+  try:
+    if request.form.get('password') != request.form.get('password_confirmation'):
+      raise Exception('The password confirmation must match the password.')
+    elif User.query.filter_by(email=request.form.get('email')).first():
+      raise Exception('The email address is already registered.')
+
+    user = User(
+      email=request.form.get('email'),
+      password=generate_password_hash(request.form.get('password'))
+    )
+    user.save()
+    
+    login_user(user)
+    return redirect(url_for('cookies.cookies'))
+  except Exception as error_message:
+    error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
+    return render_template('users/registration.html', error=error)
 
 @blueprint.get('/register')
 def get_register():
