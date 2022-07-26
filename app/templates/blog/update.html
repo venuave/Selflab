@@ -1,0 +1,39 @@
+{% extends 'simple_pages/base.html' %} {% block body %}
+  <h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
+  <form method="POST">
+    <label for="title">Title</label>
+    <br />
+    <input
+      type="text"
+      name="title"
+      placeholder="Post title"
+      value="{{ request.form['title'] or post['title'] }}"
+      input
+    />
+    <br />
+
+    <label for="body">Post body</label>
+    <br />
+    <textarea
+      name="body"
+      rows="15"
+      cols="60"
+      value="{{ request.form['body'] or post['body'] }}"
+    >
+                  {{ request.form['body'] or post['body'] }}
+                </textarea
+    >
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr />
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="POST">
+    <input
+      type="submit"
+      value="Delete Post"
+      onclick="return confirm('This will delete this post?')"
+    />
+  </form>
+</div>
+{% endblock %}

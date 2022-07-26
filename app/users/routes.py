@@ -24,7 +24,7 @@ def post_registration():
     user.save()
     
     login_user(user)
-    return redirect(url_for('cookies.cookies'))
+    return redirect(url_for('blog.blog'))
   except Exception as error_message:
     error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
     return render_template('users/registration.html', error=error)
@@ -48,7 +48,7 @@ def post_register():
     user.save()
     
     login_user(user)
-    return redirect(url_for('cookies.cookies'))
+    return redirect(url_for('blog.blog'))
   except Exception as error_message:
     error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
     return render_template('users/register.html', error=error)
@@ -68,7 +68,7 @@ def post_login():
       raise Exception('The password does not appear to be correct.')
     
     login_user(user)
-    return redirect(url_for('cookies.cookies'))
+    return redirect(url_for('blog.blog'))
     
   except Exception as error_message:
     error = error_message or 'An error occurred while logging in. Please verify your email and password.'

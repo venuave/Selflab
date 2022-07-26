@@ -11,10 +11,6 @@ def about():
   return render_template('simple_pages/about_me.html')
 
 
-@blueprint.route('/blog')
-def blog():
-  return render_template ('simple_pages/blog.html')
-
 @blueprint.route('/base')
 def base():
   return render_template ('simple_pages/base.html')

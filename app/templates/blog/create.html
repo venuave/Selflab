@@ -1,0 +1,25 @@
+{% extends 'simple_pages/base.html' %} {% block header %} {% block body %}
+  <h1>Add a New Post</h1>
+  <form method="POST">
+    <div>
+      <label for="title">Title</label>
+      <br />
+      <input type="text" name="title" placeholder="Post title" />
+      <br />
+    </div>
+    <label for="body">Post body</label>
+    <br />
+    <div>
+      <textarea
+        name="body"
+        type="text"
+        placeholder="Post body"
+        rows="15"
+        cols="60"
+      ></textarea>
+      <br />
+    </div>
+    <button type="submit" >Submit</button>
+  </form>
+</div>
+{% endblock %}{% endblock %}

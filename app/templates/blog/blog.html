@@ -1,0 +1,16 @@
+{% extends 'simple_pages/base.html' %} {% block title %}Cookieshop{% endblock %}
+{% block body %} 
+{% for post in posts %}
+  <div class="post">
+    <div class="posttitle">{{ post['title'] }}</div>
+    <p>{{ post['body'] }}</p>
+    <button
+      type="button"
+      onclick="window.location.href='{{ url_for('blog.get_edit', id=post['id']) }}'"
+    >
+      Edit
+    </button>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
