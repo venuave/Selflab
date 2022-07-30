@@ -8,7 +8,6 @@ blueprint = Blueprint('blog', __name__)
 
 
 @blueprint.route("/blog")
-@login_required
 def blog():
     posts = BlogPost.query.all()
     return render_template("/blog/blog.html", posts=posts)
@@ -73,3 +72,4 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('blog.blog'))
+
