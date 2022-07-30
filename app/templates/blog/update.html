@@ -1,5 +1,6 @@
 {% extends 'simple_pages/base.html' %} {% block body %}
-  <h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
+<script src="{{url_for('static', filename='js/counter.js') }}""></script>
+<h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
   <div class="postsection">
   <form method="POST">
     <label for="title">Title</label>
@@ -22,10 +23,12 @@
       name="body"
       rows="15"
       cols="60"
-      value="{{ request.form['body'] or post['body'] }}"
-    >{{ request.form['body'] or post['body'] }}
+      onkeyup="charcountupdate(this.value)"
+      value="{{ request.form['body'] or post['body'] }}">{{ request.form['body'] or post['body'] }}
     </textarea
-    >
+    > <span id='charcount'></span>
+    <br />
+    <br />
     <br />
     <button type="submit" class="postbtn">Submit</button>
   </form>

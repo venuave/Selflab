@@ -31,6 +31,7 @@ def post_create():
         elif not body:
             flash('Your message is missing!')
 
+
         blogpost = BlogPost(
             title=request.form.get('title'),
             body=request.form.get('body'),

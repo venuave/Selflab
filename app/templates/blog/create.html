@@ -1,5 +1,6 @@
 {% extends 'simple_pages/base.html' %} {% block header %} {% block body %}
-  <h1>Add a New Post</h1>
+<script src="{{url_for('static', filename='js/counter.js') }}""></script>
+<h1>Add a New Post</h1>
   <div class="postsection">
   <form method="POST">
     <div>
@@ -20,8 +21,13 @@
         rows="15"
         cols="60"
         height: 60px;
-      ></textarea>
+        onkeyup="charcountupdate(this.value)"
+      ></textarea> 
+      <span id='charcount'></span>
       <br />
+      <br />
+      <br />
+
     </div>
     <button type="submit" class="postbtn">Submit</button>
   </form>
