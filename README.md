@@ -18,8 +18,7 @@ create articles, edit, and remove them.
 
 ## Project purpose
 
-This project was initiated for learning
-purposes within a CODE university assignment
+This project was initiated for learning purposes within a CODE university assignment
 for Web Development and Programming Basics courses.
 
 ## Technologies used

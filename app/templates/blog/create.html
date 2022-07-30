@@ -1,25 +1,30 @@
 {% extends 'simple_pages/base.html' %} {% block header %} {% block body %}
   <h1>Add a New Post</h1>
+  <div class="postsection">
   <form method="POST">
     <div>
       <label for="title">Title</label>
       <br />
-      <input type="text" name="title" placeholder="Post title" />
+      <br />
+      <input type="text" name="title" placeholder="Edit your post title here" />
+      <br />
       <br />
     </div>
     <label for="body">Post body</label>
     <br />
+    <br />
     <div>
       <textarea
         name="body"
-        type="text"
-        placeholder="Post body"
+        placeholder="Edit your post body here"
         rows="15"
         cols="60"
+        height: 60px;
       ></textarea>
       <br />
     </div>
-    <button type="submit" >Submit</button>
+    <button type="submit" class="postbtn">Submit</button>
   </form>
+</div>
 </div>
 {% endblock %}{% endblock %}
