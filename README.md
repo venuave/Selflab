@@ -8,13 +8,14 @@ portfolio website www.hi-tina.com
 
 ## Project name
 
-Selflab – Personal Blog Platform
+Selflab – Blog Platform
 
 ## Project description
 
 It is a service that offers platform for
-creator blogging. The users can
-create articles, edit, and remove them.
+creator blogging. Multiple users can
+log in into one account, create articles, edit,
+and remove them.
 
 ## Project purpose
 
@@ -26,9 +27,13 @@ for Web Development and Programming Basics courses.
 – HTML
 – CSS
 – JavaScript
-– Database SQLAlchemy
+– Database SQLAlchemy, PostgreSQL
 – Python3
 – Flask
+
+## Architecture diagram
+
+Find image here: https://github.com/venuave/Selflab/blob/working/app/static/img/architecture_diagram.jpg
 
 ## MVP overview:
 

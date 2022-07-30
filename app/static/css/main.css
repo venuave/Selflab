@@ -173,7 +173,7 @@ input[type="password"]:focus {
   padding: 40px;
   font-weight: 400;
   color: black;
-  align: center;
+  align-items: center;
 }
 
 /* Blog styling */
