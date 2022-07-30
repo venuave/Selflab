@@ -42,7 +42,7 @@ h4 {
 .nav {
   background-color: #f9d648;
   overflow: hidden;
-  padding: 8px;
+  padding: 24px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 80px;
@@ -157,11 +157,77 @@ input[type="password"] {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #eaeaea;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* About styling */
+
+.abouttext {
+  width: 100%;
+  padding: 40px;
+  font-weight: 400;
+  color: black;
+  align-items: center;
+}
+
+/* Blog styling */
+
+.postsection {
+  width: 30%;
+  padding: 40px;
+}
+
+.posttitle {
+  font-size: x-large;
+}
+
+.postbtn {
+  background-color: #003583;
+  color: #fff;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.postbtn:hover {
+  opacity: 1;
+}
+
+.deletebtn {
+  color: #003583;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.deletebtn:hover {
+  opacity: 1;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-color: #eaeaea;
+  height: 200px;
+}
+
+textarea:focus {
   background-color: #ddd;
   outline: none;
 }

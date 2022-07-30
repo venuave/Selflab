@@ -10,14 +10,6 @@ def index():
 def about():
   return render_template('simple_pages/about_me.html')
 
-@blueprint.route('/registration')
-def registration():
-  return render_template('simple_pages/registration.html')
-
-
-@blueprint.route('/blog')
-def blog():
-  return render_template ('simple_pages/blog.html')
 
 @blueprint.route('/base')
 def base():

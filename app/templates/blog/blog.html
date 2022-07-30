@@ -1,0 +1,19 @@
+{% extends 'simple_pages/base.html' %} {% block title %}Selflab{% endblock %}
+{% block body %} 
+{% for post in posts %}
+  <div class="postsection">
+    <h3>{{ post['title'] }}</h3>
+    <br>
+    <p>{{ post['body'] }}</p>
+    <br>
+    <button
+      type="button"
+      class="postbtn"
+      onclick="window.location.href='{{ url_for('blog.get_edit', id=post['id']) }}'"
+    >
+      Edit
+    </button>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

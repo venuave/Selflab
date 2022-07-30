@@ -1,15 +1,16 @@
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, render_template, request, url_for, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
+from app.users.models import User
 from flask_login import login_user, logout_user
 
 blueprint = Blueprint('users', __name__)
 
-@blueprint.get('/register')
-def get_register():
-  return render_template('users/register.html')
+@blueprint.route('/registration')
+def get_registration():
+  return render_template('users/registration.html')
 
-@blueprint.post('/register')
-def post_register():
+@blueprint.post('/registration')
+def post_registration():
   try:
     if request.form.get('password') != request.form.get('password_confirmation'):
       raise Exception('The password confirmation must match the password.')
@@ -23,10 +24,10 @@ def post_register():
     user.save()
     
     login_user(user)
-    return redirect(url_for('cookies.cookies'))
+    return redirect(url_for('blog.blog'))
   except Exception as error_message:
     error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
-    return render_template('users/register.html', error=error)
+    return render_template('users/registration.html', error=error)
 
 @blueprint.get('/login')
 def get_login():
@@ -43,7 +44,7 @@ def post_login():
       raise Exception('The password does not appear to be correct.')
     
     login_user(user)
-    return redirect(url_for('cookies.cookies'))
+    return redirect(url_for('blog.blog'))
     
   except Exception as error_message:
     error = error_message or 'An error occurred while logging in. Please verify your email and password.'
@@ -52,5 +53,4 @@ def post_login():
 @blueprint.get('/logout')
 def logout():
   logout_user()
-
   return redirect(url_for('users.get_login'))

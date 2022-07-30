@@ -9,10 +9,10 @@
       </div>
       <div class="nav-links">
         <a href="{{ url_for('simple_pages.about') }}">About me</a>
-        <a href="{{ url_for('cookies.cookies') }}">Cookies</a>
-        <a href="#">Login</a>
-        <a href="{{ url_for('simple_pages.registration') }}">Sign up</a>
-        <a href="{{ url_for('simple_pages.blog') }}">Blog</a>
+        <a href="{{ url_for('users.get_login') }}">Login</a>
+        <a href="{{ url_for('users.get_registration') }}">Sign up</a>
+        <a href="{{ url_for('blog.blog') }}">Blog</a>
+        <a href="{{ url_for('blog.get_create') }}">New post</a>
       </div>
     </nav>
     {% block head %}
@@ -30,13 +30,14 @@
     {% block body %}{% endblock %}
   </body>
   <footer class="footer">
-    Copyright &copy; 2022 by Selflab. All rights reserved.
-    <hr />
-    {% if current_user.is_authenticated %}
     <small>
-      Logged in as {{ current_user.email }}.
+      {% if current_user.is_authenticated %} Logged in as {{ current_user.email
+      }}.
       <a href="{{ url_for('users.logout') }}">Logout</a>
-    </small>
-    {% endif %}
+      {% endif %}</small
+    >
+    <br />
+    <br />
+    Copyright &copy; 2022 by Selflab. All rights reserved.
   </footer>
 </html>
